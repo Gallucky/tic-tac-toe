@@ -1,0 +1,158 @@
+/* Defining global properties / variables for the mainly used colors. */
+:root {
+    --color-palette-dominant: #36454f;
+    --color-palette-complementary: #008080;
+    --color-palette-accent: #ffa500;
+    --color-palette-light-neutral: #f0f0f0;
+    --color-palette-dark-neutral: #2c3e50;
+    --color-palette-additional-accent: #e74c3c;
+    --color-palette-dark-accent: #1c4b4e;
+
+    --programming-languages-background-color: #2e6b77;
+    scroll-behavior: smooth;
+}
+
+/* Remove any existing elements margins and paddings */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    cursor: url("../images/cursor_24x24.png"), default;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--color-palette-dominant);
+    font-family: "Rubik";
+
+    /* 
+        Styling the main Y Scrollbar
+        Helping website:
+        https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp
+    */
+    &::-webkit-scrollbar {
+        width: 10px;
+        background-color: #303030;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #adadad;
+        border-radius: 10px;
+        height: 50px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: radial-gradient(lightgray, darkgray, gray);
+        border-radius: 10px;
+        height: 50px;
+    }
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 7.5px white;
+        border-radius: 10px;
+    }
+    &::-webkit-resizer {
+        border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+        &::-webkit-scrollbar,
+        &::-webkit-scrollbar-thumb,
+        &::-webkit-scrollbar-thumb:hover,
+        &::-webkit-scrollbar-track,
+        &::-webkit-resizer {
+            display: none;
+        }
+    }
+}
+
+.custom-scroll-bar {
+    /* 
+        Styling the main Y Scrollbar
+        Helping website:
+        https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp
+    */
+    &::-webkit-scrollbar {
+        width: 10px;
+        background-color: #303030;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #adadad;
+        border-radius: 10px;
+        height: 50px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: radial-gradient(lightgray, darkgray, gray);
+        border-radius: 10px;
+        height: 50px;
+    }
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 7.5px white;
+        border-radius: 10px;
+    }
+    &::-webkit-resizer {
+        border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+        &::-webkit-scrollbar,
+        &::-webkit-scrollbar-thumb,
+        &::-webkit-scrollbar-thumb:hover,
+        &::-webkit-scrollbar-track,
+        &::-webkit-resizer {
+            display: none;
+        }
+    }
+}
+
+/* | Class Description |
+    This class will make the desired element's text be with a outline
+    Element with small text the outline may look incomplete / fragmented,
+    for this there is a class called: --outline-thickness of the value 0.4px
+    should resolve this issue.
+ */
+.outline-text {
+    --outline-thickness: 1px;
+    --outline-color: black;
+
+    text-shadow:
+        var(--outline-thickness) var(--outline-thickness) 0 var(--outline-color),
+        calc(-1 * var(--outline-thickness)) calc(-1 * var(--outline-thickness)) 0
+            var(--outline-color),
+        var(--outline-thickness) calc(-1 * var(--outline-thickness)) 0 var(--outline-color),
+        calc(-1 * var(--outline-thickness)) var(--outline-thickness) 0 var(--outline-color),
+        0 var(--outline-thickness) 0 var(--outline-color),
+        0 calc(-1 * var(--outline-thickness)) 0 var(--outline-color),
+        var(--outline-thickness) 0 0 var(--outline-color),
+        calc(-1 * var(--outline-thickness)) 0 0 var(--outline-color);
+}
+
+a,
+button {
+    cursor: url("../images/cursor-click_24x24.png"), pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+    cursor: url("../images/select-cursor_24x24.png"), text;
+}
+
+:disabled {
+    cursor: url("../images/unavailable-cursor_24x24.png"), not-allowed;
+    cursor: no-drop;
+}
+
+.anchor-linked {
+    padding-top: 75px;
+    margin-top: -75px;
+}

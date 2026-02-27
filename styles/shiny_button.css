@@ -1,0 +1,92 @@
+button[type="submit"]:hover {
+    cursor: url("../images/cursor-click_24x24.png"), pointer;
+}
+
+.disabled {
+    cursor: not-allowed !important;
+    background-color: grey !important;
+    border-color: silver !important;
+    border: #8b0000;
+}
+
+button[type="submit"] {
+    height: 2rem;
+
+    padding-inline: 1rem;
+    align-self: center;
+
+    /* outline: none;
+    border: 1px solid black;
+    border-radius: 4px; */
+}
+
+.shiny-button {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-block: 0.5rem;
+    padding-inline: 1.25rem;
+    gap: 10px;
+
+    background-color: teal;
+    border-radius: 8px;
+
+    color: #ffff;
+    font-size: 15px;
+    font-weight: bold;
+
+    outline: 1px solid black;
+    border: 3px solid rgb(56, 170, 170);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+
+    overflow: hidden;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.shiny-button:hover {
+    transform: scale(1.05);
+    border-color: rgb(0, 80, 80);
+}
+
+.shiny-button:hover::after {
+    animation: shine 1.5s ease-out infinite;
+}
+
+.shiny-button::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 0) 70%
+    );
+    top: 0;
+    left: -100px;
+    opacity: 0.6;
+    z-index: 9999;
+}
+
+/* 
+Credit for the shine functionality:
+https://uiverse.io/satyamchaudharydev/rude-wolverine-24
+ */
+@keyframes shine {
+    0% {
+        left: -100px;
+    }
+
+    60% {
+        left: 100%;
+    }
+
+    to {
+        left: 100%;
+    }
+}
